@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Cart.css';
 
-const Cart = ({ isOpen, onClose, onCheckout }) => {
+const Cart = ({ isOpen, onClose }) => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -66,6 +66,11 @@ const Cart = ({ isOpen, onClose, onCheckout }) => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const handleCheckout = () => {
+    // Main branch: Just show alert - no actual checkout functionality
+    alert('Checkout functionality coming soon! This is the main branch demo - cart functionality only.');
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -121,7 +126,7 @@ const Cart = ({ isOpen, onClose, onCheckout }) => {
                 <h3>Total: ${getTotalPrice()}</h3>
                 <button 
                   className="checkout-btn"
-                  onClick={() => onCheckout(cartItems)}
+                  onClick={handleCheckout}
                 >
                   Proceed to Checkout
                 </button>
