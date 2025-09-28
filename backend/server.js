@@ -133,6 +133,12 @@ app.put('/api/cart/update', (req, res) => {
   res.json({ message: 'Cart updated', cart });
 });
 
+// Clear cart
+app.delete('/api/cart/clear', (req, res) => {
+  cart = [];
+  res.json({ message: 'Cart cleared', cart });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

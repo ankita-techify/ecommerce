@@ -1,0 +1,35 @@
+.product-list {
+  padding: 20px;
+}
+
+.product-list h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2em;
+  color: #d32f2f;
+  background-color: #ffebee;
+  border-radius: 4px;
+  margin: 20px;
+}
