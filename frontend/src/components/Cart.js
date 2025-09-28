@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Cart.css';
 
-const Cart = ({ isOpen, onClose }) => {
+const Cart = ({ isOpen, onClose, onCheckout }) => {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -119,7 +119,12 @@ const Cart = ({ isOpen, onClose }) => {
               
               <div className="cart-total">
                 <h3>Total: ${getTotalPrice()}</h3>
-                <button className="checkout-btn">Proceed to Checkout</button>
+                <button 
+                  className="checkout-btn"
+                  onClick={() => onCheckout(cartItems)}
+                >
+                  Proceed to Checkout
+                </button>
               </div>
             </>
           )}
